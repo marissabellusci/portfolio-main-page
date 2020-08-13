@@ -80,7 +80,7 @@ a {
   flex-grow: 1;
   border: solid lightgray;
   width: 25vw;
-  height: 50vh;
+  height: fit-content;
   margin: 2rem;
   justify-content: center;
   align-items: center;
@@ -91,6 +91,13 @@ a {
   border-radius: 10px;
   box-shadow: 5px 3px 15px 4px rgba(155,155,155,0.3);
   background: linear-gradient(rgb(243, 242, 242), white);
+}
+
+@media (max-width: 1040px){
+  .item{
+  max-height: fit-content;
+  min-height: fit-content;
+  }
 }
 
 
