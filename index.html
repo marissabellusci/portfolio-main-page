@@ -92,6 +92,20 @@ a {
   border-radius: 10px;
   box-shadow: 5px 3px 15px 4px rgba(155,155,155,0.3);
   background: linear-gradient(rgb(243, 242, 242), white);
+
+  transition: all 0.5s;
+  transform: translateY(100px);
+  will-change: opacity;
+  opacity: 0;
+  display: none;
+}
+
+.trigger-enter .item{
+  display: block;
+}
+
+.trigger-enter-active .item{
+  opacity: 1;
 }
 
 @media (max-width: 1000px){
@@ -342,8 +356,26 @@ a > p {
 
 <footer></footer>
 
-    <script>
+<script>
 
-        </script>
+function debounce(func, wait = 10, immediate = true) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
+
+
+
+</script>
+
 </body>
 </html>
